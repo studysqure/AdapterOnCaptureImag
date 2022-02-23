@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+
+
+
+    <string name="no_h">नहीं</string>
+    <string name="yes_h">हां</string>
+    <string name="image1_h">फोटो 1</string>
+    <string name="image2_h">फोटो 2</string>
+    <string name="image3_h">फोटो 3</string>
+    <string name="upload1_h">अपलोड  1</string>
+    <string name="upload2_h">अपलोड  2</string>
+    <string name="upload3_h">अपलोड  3</string>
+
+    <string name="ratting_h">रैटिंग</string>
+    <string name="gender_h">लिंग</string>
+    <string name="male_h">पुरुष</string>
+    <string name="female_h">महिला</string>
+    <string name="other_h">अन्य</string>
+
+
+    <string name="no_E">NO</string>
+    <string name="yes_E">YES</string>
+    <string name="image1_E">Image 1</string>
+    <string name="image2_E">Image 2</string>
+    <string name="image3_E">Image 3</string>
+    <string name="upload1_E">Upload 1</string>
+    <string name="upload2_E">Upload 2</string>
+    <string name="upload3_E">Upload 3</string>
+
+    <string name="ratting_E">Ratting</string>
+    <string name="gender_E">Gender</string>
+    <string name="male_E">Male</string>
+    <string name="female_E">Female</string>
+    <string name="other_E">Other</string>
+
+    <string-array name="language">
+        <item>हिन्दी</item>
+        <item>English</item>
+    </string-array>
+</resources>

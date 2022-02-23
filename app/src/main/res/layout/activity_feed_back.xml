@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.FeedBackActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/ratting_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ratting"
+                android:fontFamily="sans-serif"
+                android:textSize="14sp"
+                android:paddingStart="7dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/black"/>
+
+
+            <RatingBar
+                android:id="@+id/rating_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="2.5"
+                android:padding="5dp"
+                android:theme="@style/RatingBar"/>
+
+
+            <TextView
+                android:id="@+id/gender_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:fontFamily="sans-serif"
+                android:textSize="14sp"
+                android:paddingStart="7dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/black"/>
+
+            <RadioGroup
+                android:id="@+id/gender_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/male_rb"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Male"/>
+
+                <RadioButton
+                    android:id="@+id/female_rb"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Female"/>
+
+                <RadioButton
+                    android:id="@+id/other_rb"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Other"/>
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="9dp"
+            android:background="@color/white">
+
+            <AutoCompleteTextView
+                android:id="@+id/select_language_actv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="11dp"
+                android:paddingTop="11dp"
+                android:inputType="none"
+                android:focusable="false"
+                android:paddingBottom="11dp"
+                android:text="Select Language"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feedback_quetionary_recyler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            tools:listitem="@layout/feedback_quationary"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

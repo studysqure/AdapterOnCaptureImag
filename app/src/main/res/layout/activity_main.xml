@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+    <include layout="@layout/toolbar_layout" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lang_drop_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:background="@color/white">
+
+            <!--<Spinner
+                android:id="@+id/select_language_actv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:focusable="false"
+                android:inputType="none"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:textColor="@color/black" />-->
+
+            <AutoCompleteTextView
+                android:id="@+id/select_language_actv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:inputType="none"
+                android:paddingStart="11dp"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:text="Select Language"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/lang_drop_lyt"
+            android:id="@+id/quetionary_recyler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_above="@+id/submit_btn_txt"/>
+
+
+
+        <TextView
+            android:id="@+id/submit_btn_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="11dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:background="@color/teal_200"
+            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="SUBMIT"
+            android:textColor="@color/white"
+            android:layout_above="@+id/space_view"
+            android:textSize="17sp"/>
+
+        <View
+            android:id="@+id/space_view"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:background="@color/white"
+            android:layout_height="30dp"/>
+
+
+    </RelativeLayout>
+
+
+
+
+   <!-- <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingStart="7dp"
+                android:text="Are toilet seats clean ?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/q_one_RG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Yes"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:text="No"
+                    android:textSize="14sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_one_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_one_lyt1"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 2"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_one_lyt2"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 3"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_one_lyt3"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="Image 4"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_one_lyt4"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/purple_500"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="upload Image"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            &lt;!&ndash;            lyt2&ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:paddingStart="7dp"
+                android:text="Are the urinals clean ?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/q_two_RG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Yes"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:text="No"
+                    android:textSize="14sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_two_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_one_lyt11"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_one_lyt22"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_two_lyt33"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="Image 4"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_two_lyt4"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/purple_500"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="upload Image"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            &lt;!&ndash;  lyt3   &ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:paddingStart="7dp"
+                android:text="Whether water is availablwe  ?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/q_three_RG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Yes"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:text="No"
+                    android:textSize="14sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_three_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_three_lyt11"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_three_lyt22"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_three_lyt33"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="Image 4"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_three_lyt4"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/purple_500"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="upload Image"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            &lt;!&ndash;  lyt4   &ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:paddingStart="7dp"
+                android:text="Whether Toilet floor clean ?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/q_four_RG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Yes"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:text="No"
+                    android:textSize="14sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_four_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_four_lyt1"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_four_lyt2"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_four_lyt3"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="Image 4"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_four_lyt4"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/purple_500"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="upload Image"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            &lt;!&ndash;  lyt5   &ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:paddingStart="7dp"
+                android:text="Light bulbs functioning ?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/q_five_RG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Yes"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:text="No"
+                    android:textSize="14sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_five_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_five_lyt1"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_five_lyt2"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_five_lyt3"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="Image 4"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_five_lyt4"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/purple_500"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="upload Image"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            &lt;!&ndash;  lyt6   &ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:paddingStart="7dp"
+                android:text="Tiles and walls clean and maintained ?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/q_six_RG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Yes"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:text="No"
+                    android:textSize="14sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_six_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/six_lyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_six_lyt1"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_six_lyt2"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="Image 1"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_six_lyt3"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@color/light_gray" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/purple_500"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:padding="7dp"
+                            android:text="upload Image"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="Image 4"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_six_lyt4"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/purple_500"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        android:text="upload Image"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+    </ScrollView>-->
+</LinearLayout>
